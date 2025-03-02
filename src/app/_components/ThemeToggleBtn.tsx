@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { CiDark } from "react-icons/ci";
+import { CiLight } from "react-icons/ci";
 export default function ThemeToggleBtn() {
   const { theme, setTheme, systemTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
@@ -14,7 +15,7 @@ export default function ThemeToggleBtn() {
           setTheme(currentTheme === "dark" ? "light" : "dark");
         }}
       >
-        {currentTheme === "dark" ? <><CiDark className="text-[20px]" color="white" />Light Mode</> :<><CiDark className="text-[20px]" color="black"/>Dark Mode</>}
+        {currentTheme === "dark" ? <><CiLight className="text-[20px]" color="white" /></> :<><CiDark className="text-[20px]" color="black"/></>}
       </button>
     </div>
   );

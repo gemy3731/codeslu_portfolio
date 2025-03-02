@@ -26,12 +26,12 @@ const AboutCard = ({
   }, []);
   return (
     <div
-    className={`about-card w-1/2 mx-auto relative  `}
+    className={`md:w-1/2 w-full mx-auto relative `}
       data-aos={anims}
       data-aos-anchor-placement="top-bottom"
     >
       <Image src={image} alt="" className="rounded-3xl w-full" />
-      <h4 className="absolute top-4 right-4 text-[24px] font-bold text-right ">
+      <h4 className="absolute top-4 right-4  font-bold text-right card-text">
         <p>{cardText[0]}</p>
         <p>{cardText[1]}</p>
       </h4>

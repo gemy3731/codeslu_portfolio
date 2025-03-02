@@ -29,7 +29,7 @@ const HomeSlider = () => {
   }, [emblaApi]);
   const slides = [imgOne, imgTwo, imgFour, imgThree];
   return (
-    <section className="embla">
+    <section id="home" className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((img, index) => {

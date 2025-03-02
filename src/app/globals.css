@@ -49,8 +49,6 @@
   height: var(--slide-height);
   user-select: none;
 }
-/* .about-card{
-  background-image: url('../../assests/1_New1.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-} */
+.card-text{
+  font-size: clamp(0.7rem, 2vw, 2rem);
+}

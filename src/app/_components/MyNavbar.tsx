@@ -30,6 +30,9 @@ let observer;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            entry.target.classList.add("active");
+          }else{
+            entry.target.classList.remove("active");
           }
         });
       },
@@ -46,7 +49,7 @@ let observer;
   }, []);
   return (
   <div >
-    <Navbar  rounded className="fixed top-0 left-0 right-0 z-50 shadow-md dark:shadow-lg">
+    <Navbar  rounded className="fixed top-0 left-0 right-0 z-50 shadow-md dark:shadow-lg dark:bg-[rgb(27,27,27)] py-4">
       <Navbar.Brand as={Link} href="#home">
         <img src="https://ca.slack-edge.com/T07P4ECQXU7-U07Q7QFRWV6-305fa1c24e22-512" className="mr-3 h-6 sm:h-9" alt="Codeslu Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">CodeSlu</span>

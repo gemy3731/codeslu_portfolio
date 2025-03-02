@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 .dark .darkTheme{
-  background-color: hsl(220.91,39.29%,10.98%);
+  background-color: hsl(0, 0%, 0%);
   color: hsl(0, 0%, 100%);
 }
 .light .lightTheme{
@@ -51,4 +51,28 @@
 }
 .card-text{
   font-size: clamp(0.7rem, 2vw, 2rem);
+}
+.about-section{
+  position: relative;
+  width: fit-content;
+}
+.about-section::after{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  width: 0;
+  /* background-color: black; */
+  animation: expandLine 2s forwards;
+  /* Optionally, delay the animation until the section is likely visible */
+  animation-delay: 2s;
+}
+@keyframes expandLine {
+  to {
+    width: 95%;
+  }
+}
+nav a.active{
+  background-color: brown;
 }

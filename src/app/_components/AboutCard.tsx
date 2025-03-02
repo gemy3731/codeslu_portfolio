@@ -1,0 +1,45 @@
+"use client";
+import Image, { StaticImageData } from "next/image";
+import React, { useEffect } from "react";
+import imgThree from "../../../assests/1.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+const AboutCard = ({
+  className,
+  image,
+  topText,
+  bottomText,
+  anims,
+}: {
+  className?: string;
+  image: StaticImageData;
+  topText: string;
+  bottomText: string;
+  anims: string;
+}) => {
+  const cardText = topText.split(" ");
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      easing: "ease-in-out",
+    });
+  }, []);
+  return (
+    <div
+    className={`about-card w-1/2 mx-auto relative  `}
+      data-aos={anims}
+      data-aos-anchor-placement="top-bottom"
+    >
+      <Image src={image} alt="" className="rounded-3xl w-full" />
+      <h4 className="absolute top-4 right-4 text-[24px] font-bold text-right ">
+        <p>{cardText[0]}</p>
+        <p>{cardText[1]}</p>
+      </h4>
+      <span className="absolute bottom-4 left-4 text-[32px] font-bold text-right">
+        {bottomText}
+      </span>
+    </div>
+  );
+};
+
+export default AboutCard;

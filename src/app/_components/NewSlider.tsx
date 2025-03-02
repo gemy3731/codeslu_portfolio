@@ -14,7 +14,15 @@ const images = [
 
 export default function NewSlider() {
   const [items, setItems] = useState(images);
-
+  
+  useEffect(() => {
+    const slideInterval = setInterval(()=>{
+        nextSlide()
+    }, 4000);
+        return () => {
+            clearInterval(slideInterval)
+        }
+}, []);
   const nextSlide = () => {
     setItems((prevItems) => [...prevItems.slice(1), prevItems[0]]);
   };

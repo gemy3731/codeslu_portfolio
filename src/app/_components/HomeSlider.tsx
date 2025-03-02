@@ -8,7 +8,6 @@ import imgTwo from "../../../assests/1_New1.jpg";
 import imgFour from "../../../assests/2.jpg";
 import imgThree from "../../../assests/1.jpg";
 import Image from "next/image";
-import Fade from "embla-carousel-fade";
 import { useEffect, useState } from "react";
 type PropType = {
   slides: number[];

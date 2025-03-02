@@ -26,7 +26,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="mb-52 dark:bg-[#1b1b1b] bg-slate-100 dark:shadow-lg relative"
+      className="dark:bg-[#1b1b1b] bg-slate-100 dark:shadow-lg relative"
     >
       {isLargeScreen&&<svg
         className="absolute bottom-0 right-0 left-0"

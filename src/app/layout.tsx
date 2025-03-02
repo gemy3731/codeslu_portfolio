@@ -29,7 +29,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} darkTheme ` }>
         <ThemeProviderWrapper>
           <MyNavbar />
+          <div className="mt-28">
         {children}
+        </div>
         </ThemeProviderWrapper>
       </body>
     </html>

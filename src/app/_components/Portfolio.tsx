@@ -1,50 +1,27 @@
 "use client";
-
-import { useEffect, useRef } from "react";
-import { tns } from "tiny-slider/src/tiny-slider";
-import "tiny-slider/dist/tiny-slider.css";
+import { useEffect } from "react";
+import PortfolioTabs from "./PortfolioTabs";
+import Aos from "aos";
 
 const Portfolio = () => {
-//   const sliderRef = useRef<HTMLDivElement>(null);
-//   useEffect(() => {
-//     if (!sliderRef.current) return;
-
-//     const slider = tns({
-//       container: sliderRef.current,
-//       items: 1,
-//       slideBy: "page",
-//       autoplay: true,
-//       axis: "vertical", // Vertical slider
-//       controls: true,
-//       nav: true,
-//       mouseDrag: true,
-//       speed: 500,
-//     });
-//     return () => {
-//       slider.destroy(); // Cleanup on unmount
-//     };
-//   }, []);
-
+  useEffect(() => {
+      Aos.init({
+        duration: 1500,
+        easing: "ease-in-out",
+      });
+    }, []);
   return (
-    <></>
-//     <section id="portfolio" className="container mx-auto">
-//       <div className="container mx-auto">
-//         <div ref={sliderRef} className="my-slider">
-//           <div>
-//             {/* <img src="" alt="Slide 1" /> */}
-// <h4>hello</h4>
-//           </div>
-//           <div>
-//             {/* <img src="" alt="Slide 2" /> */}
-// <h4>hello</h4>
-//           </div>
-//           <div>
-//             <h4>hello</h4>
-//             {/* <img src="" alt="Slide 3" /> */}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
+    <section id="portfolio" className="relative overflow-hidden">
+      <div className="container mx-auto py-10 flex flex-col gap-8">
+        <h2 data-aos='fade-up' className="portfolio-section uppercase text-[clamp(24px,85px,92px)] font-semibold text-center dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-blacko">
+          Portolio
+        </h2>
+        <div>
+          <PortfolioTabs />
+        </div>
+      </div>
+      <div className="shine-line"></div>
+    </section>
   );
 };
 

@@ -56,7 +56,14 @@
 .about-section{
   position: relative;
   width: fit-content;
+ 
 }
+.about-section.dark{
+  background: linear-gradient(transparent, white, transparent);
+  background-clip: text;
+  color: transparent;
+}
+
 .about-section::after{
   content: '';
   position: absolute;
@@ -64,9 +71,7 @@
   left: 0;
   height: 2px;
   width: 0;
-  /* background-color: black; */
   animation: expandLine 2s forwards;
-  /* Optionally, delay the animation until the section is likely visible */
   animation-delay: 2s;
 }
 @keyframes expandLine {
@@ -220,4 +225,44 @@ nav a.active{
 .slider-button button:hover{
   background: #ababab;
   color: #fff;
+}
+
+
+.shine-line{
+  position: absolute;
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(transparent, white, transparent);
+  animation: shine 2.5s 2s infinite linear;
+  opacity: 0.7;
+  left: 95%;
+
+}
+
+
+@keyframes shine {
+  0% {
+    transform: translateY(-100%); 
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.portfolio-card{
+  position: relative;
+}
+
+.overlay{
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 1s;
+}
+.portfolio-card:hover .overlay{
+  opacity: 0.7;
 }

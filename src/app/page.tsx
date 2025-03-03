@@ -3,6 +3,7 @@ import ContactUs from "./_components/ContactUs";
 import HomeSlider from "./_components/HomeSlider";
 import NewSlider from "./_components/NewSlider";
 import Portfolio from "./_components/Portfolio";
+import Reviews from "./_components/Reviews";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <NewSlider />
         <About />
         <Portfolio />
+        <Reviews />
         <ContactUs />
       </div>
     </>

@@ -13,7 +13,7 @@ export default function MyNavbar() {
     const handleLinkClick = (event: Event) => {
       event.preventDefault();
       const target = event.currentTarget as HTMLAnchorElement;
-      const targetId = target.innerText.toLowerCase();
+      const targetId = target.innerText.toLowerCase().replace(" ", "");
       const targetElement = document.getElementById(targetId || "");
 
       if (targetElement) {

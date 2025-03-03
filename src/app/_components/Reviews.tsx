@@ -14,7 +14,7 @@ const images = [
   { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
 
 ];
-const animation = { duration: 20000, easing: (t: number) => t };
+const animation = { duration: 50000, easing: (t: number) => t };
 
 const Reviews = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(true);
@@ -36,7 +36,7 @@ const Reviews = () => {
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {
       perView: isLargeScreen?4:isMdScreen?3:1,
-      spacing: 15,
+      spacing: 30,
     },
     loop: true,
     renderMode: "performance",

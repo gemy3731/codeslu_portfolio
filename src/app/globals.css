@@ -8,7 +8,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  scroll-behavior: smooth;
+}
 .dark .darkTheme{
   background-color: hsl(0, 0%, 0%);
   color: hsl(0, 0%, 100%);
@@ -228,7 +230,7 @@ nav a.active{
 }
 
 
-.shine-line{
+/* .shine-line{
   position: absolute;
   width: 2px;
   height: 80%;
@@ -247,7 +249,7 @@ nav a.active{
   100% {
     transform: translateY(100%);
   }
-}
+} */
 
 .portfolio-card{
   position: relative;

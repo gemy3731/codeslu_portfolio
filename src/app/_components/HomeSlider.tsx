@@ -24,11 +24,11 @@ const HomeSlider = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
     emblaApi.on("select", onSelect);
-    onSelect(); // Set initial opacity
+    onSelect();
   }, [emblaApi]);
   const slides = [imgOne, imgTwo, imgFour, imgThree];
   return (
-    <section id="home" className="embla container mx-auto">
+    <section  className="embla container mx-auto">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((img, index) => {

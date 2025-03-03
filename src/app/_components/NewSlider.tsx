@@ -35,7 +35,7 @@ export default function NewSlider() {
   };
 
   return (
-    <div className="container mx-auto">
+    <section id="home" className="container mx-auto">
       <div className="slider-container mx-auto rounded-xl">
         <div className="new-slide">
           {items.map((item, index) => (
@@ -65,6 +65,6 @@ export default function NewSlider() {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

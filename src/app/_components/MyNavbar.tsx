@@ -8,12 +8,12 @@ import { useEffect, useState } from "react";
 export default function MyNavbar() {
   const [isOpened,setIsOpened] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("home");
-let observer;
+
   useEffect(() => {
     const handleLinkClick = (event: Event) => {
       event.preventDefault();
       const target = event.currentTarget as HTMLAnchorElement;
-      const targetId = target.getAttribute("href")?.substring(1);
+      const targetId = target.innerText.toLowerCase();
       const targetElement = document.getElementById(targetId || "");
 
       if (targetElement) {
@@ -23,13 +23,14 @@ let observer;
     };
 
     const sections = document.querySelectorAll("section[id]");
-    const links = document.querySelectorAll("nav a");
+    const links = document.querySelectorAll(".nav-links a");
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            console.log(entry.target);
             entry.target.classList.add("active");
           }else{
             entry.target.classList.remove("active");
@@ -57,18 +58,19 @@ let observer;
       <div onClick={()=>{setIsOpened(!isOpened)}}>
       <Navbar.Toggle />
       </div>
-      <Navbar.Collapse>
-        <Navbar.Link href="#home" active={activeSection === "home"}>
+      
+      <Navbar.Collapse className="nav-links">
+        <Navbar.Link  href="#" >
           Home
         </Navbar.Link>
-        <Navbar.Link as={Link} href="#about" active={activeSection === "about"}>
+        <Navbar.Link  href="#" >
           About
         </Navbar.Link>
-        <Navbar.Link href="#portfolio" active={activeSection === "portfolio"}>Portfolio</Navbar.Link>
-        <Navbar.Link href="#forum" active={activeSection === "forum"}>Forum</Navbar.Link>
-        <Navbar.Link href="#contactUs" active={activeSection === "contactUs"}>Contact us</Navbar.Link>
-      </Navbar.Collapse>
+        <Navbar.Link href="#" >Portfolio</Navbar.Link>
+        <Navbar.Link href="#" >Forum</Navbar.Link>
+        <Navbar.Link href="#" >Contact us</Navbar.Link>
       <ThemeToggleBtn isOpened={isOpened} />
+      </Navbar.Collapse>
     </Navbar>
     </div>
   );

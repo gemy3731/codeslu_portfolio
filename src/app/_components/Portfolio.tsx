@@ -11,16 +11,16 @@ const Portfolio = () => {
       });
     }, []);
   return (
-    <section id="portfolio" className="relative overflow-hidden">
+    <section id="portfolio" className="overflow-hidden">
       <div className="container mx-auto py-10 flex flex-col gap-8">
         <h2 data-aos='fade-up' className="portfolio-section uppercase text-[clamp(24px,85px,92px)] font-semibold text-center dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-blacko">
-          Portolio
+          Portfolio
         </h2>
         <div>
           <PortfolioTabs />
         </div>
       </div>
-      <div className="shine-line"></div>
+      {/* <div className="shine-line"></div> */}
     </section>
   );
 };

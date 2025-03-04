@@ -9,8 +9,6 @@ const images = [
   { url: "https://i.ibb.co/Bq4Q0M8/img4.jpg", name: "Australia" },
   { url: "https://i.ibb.co/jTQfmTq/img5.jpg", name: "Netherland" },
   { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
-  { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
-  { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
 ];
 
 const page = () => {

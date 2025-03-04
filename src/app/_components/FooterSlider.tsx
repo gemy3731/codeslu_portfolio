@@ -1,25 +1,12 @@
 "use client";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const animation = { duration: 50000, easing: (t: number) => t };
 
 const FooterSlider = () => {
-  const [isLargeScreen, setIsLargeScreen] = useState(true);
-  const [isMdScreen, setIsMdScreen] = useState(false);
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth > 1080);
-      setIsMdScreen(window.innerWidth > 768 && window.innerWidth < 1080);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {

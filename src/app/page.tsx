@@ -1,4 +1,3 @@
-import { Footer } from "flowbite-react";
 import About from "./_components/About";
 import ContactUs from "./_components/ContactUs";
 import NewSlider from "./_components/NewSlider";

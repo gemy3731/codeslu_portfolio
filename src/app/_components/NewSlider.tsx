@@ -2,7 +2,6 @@
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { useState, useEffect } from "react";
-// import imgOne from "../../../assests/logo.png";
 const images = [
   { url: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland" },
   { url: "https://i.ibb.co/jrRb11q/img2.jpg", name: "Finland" },
@@ -47,8 +46,8 @@ export default function NewSlider() {
               }}
             >
               <div className="slider-content">
-                <div className="slider-name">{item.name}</div>
-                <div className="des">
+                <div className="slider-name sm:text-[40px]">{item.name}</div>
+                <div className="des text-[14px] sm:text-[18px]">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </div>
               </div>

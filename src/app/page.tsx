@@ -1,8 +1,10 @@
+import { Footer } from "flowbite-react";
 import About from "./_components/About";
 import ContactUs from "./_components/ContactUs";
 import NewSlider from "./_components/NewSlider";
 import Portfolio from "./_components/Portfolio";
 import Reviews from "./_components/Reviews";
+import MyFooter from "./_components/MyFooter";
 
 
 export default function Home() {
@@ -14,6 +16,7 @@ export default function Home() {
         <Portfolio />
         <Reviews />
         <ContactUs />
+        <MyFooter />
       </div>
     </>
   );

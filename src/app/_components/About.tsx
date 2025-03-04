@@ -42,10 +42,10 @@ const About = () => {
         </svg>
       )}
 
-      <div className="container mx-auto pt-10 pb-10 md:pb-36">
+      <div className="container mx-auto pt-10 pb-10 md:pb-36 flex flex-col items-center md:block px-4 md:px-0 ">
         <h2
           data-aos="fade-right"
-          className="about-section dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-black dark:after:bg-gradient-to-r from-transparent via-white to-transparent  uppercase text-[clamp(24px,48px,48px)] font-bold"
+          className="about-section  dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-black dark:after:bg-gradient-to-r from-transparent via-white to-transparent  uppercase text-[24px] md:text-[48px] font-bold"
         >
           About us
         </h2>

@@ -1,11 +1,9 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import React, { useEffect } from "react";
-import imgThree from "../../../assests/1.jpg";
+import  { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const AboutCard = ({
-  className,
   image,
   topText,
   bottomText,

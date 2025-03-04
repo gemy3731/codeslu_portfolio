@@ -31,7 +31,7 @@ const Reviews = () => {
         window.addEventListener("resize", checkScreenSize);
     
         return () => window.removeEventListener("resize", checkScreenSize);
-      }, [window.innerWidth]);
+      }, []);
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {

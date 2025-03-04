@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function MyNavbar() {
   const [isOpened,setIsOpened] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>("home");
+  const [, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
     const handleLinkClick = (event: Event) => {

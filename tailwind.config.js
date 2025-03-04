@@ -11,6 +11,9 @@ const config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        responsive1: "clamp(1.5rem, 2.5vw, 2rem)",
+      },
     },
   },
   plugins: [

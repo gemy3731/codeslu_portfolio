@@ -22,7 +22,7 @@ const About = () => {
     window.addEventListener("resize", checkScreenSize);
 
     return () => window.removeEventListener("resize", checkScreenSize);
-  }, [window.innerWidth]);
+  }, []);
   return (
     <section
       id="about"

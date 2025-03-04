@@ -17,7 +17,7 @@ export default function ThemeToggleBtn({isOpened}: {isOpened:boolean}) {
     window.addEventListener("resize", checkScreenSize); // Update on resize
 
     return () => window.removeEventListener("resize", checkScreenSize);
-  }, [window.innerWidth])
+  }, [])
   return (
   <div className={`${isOpened&&(isLargeScreen&&isOpened)?'flex justify-center items-center mx-auto mt-2':''}`}>
       <button

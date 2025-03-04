@@ -13,6 +13,7 @@ const config = {
     extend: {
       fontSize: {
         responsive1: "clamp(1.5rem, 2.5vw, 2rem)",
+        responsive2: "clamp(2rem, 10vw, 10rem)",
       },
     },
   },

@@ -1,7 +1,6 @@
 "use client";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-// import { useEffect, useState } from "react";
 
 const animation = { duration: 50000, easing: (t: number) => t };
 
@@ -11,7 +10,6 @@ const FooterSlider = () => {
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {
       perView: 1,
-      spacing: 0,
     },
     loop: true,
     renderMode: "performance",
@@ -29,8 +27,9 @@ const FooterSlider = () => {
 
   return (
     <section className="w-full">
-      <div ref={sliderRef} className="keen-slider w-full">
-        <div className="keen-slider__slide w-full text-[10rem]">C O D E S L U</div>
+      <div ref={sliderRef} className="keen-slider w-[auto] h-auto">
+        <div className="keen-slider__slide  text-responsive2 dark:text-transparent  dark:bg-clip-text  dark:bg-gradient-to-b dark:from-white  dark:to-black">C O D E S L U</div>
+        <div className=" keen-slider__slide  text-responsive2 dark:text-transparent  dark:bg-clip-text  dark:bg-gradient-to-b dark:from-white  dark:to-black">C O D E S L U</div>
       </div>
     </section>
   );

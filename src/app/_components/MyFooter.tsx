@@ -1,7 +1,7 @@
 import Image from "next/image";
 import imgOne from "../../../assests/logo.png";
 import { MdArrowOutward } from "react-icons/md";
-// import FooterSlider from "./FooterSlider";
+import FooterSlider from "./FooterSlider";
 
 const MyFooter = () => {
   return (
@@ -50,7 +50,7 @@ const MyFooter = () => {
         </div>
       </div>
       <div className="w-full mt-10 mb-0 p-0">
-      {/* <FooterSlider /> */}
+      <FooterSlider />
       </div>
         
     </section>

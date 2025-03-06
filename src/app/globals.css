@@ -303,3 +303,15 @@ html.dark .tabsItems button[aria-selected="true"]{
 .footerSlider{
   box-shadow: 0 -2px 10px rgba(138, 138, 138, 0.3);
 }
+
+.splashScreen{
+  animation: splash 2s ease-in-out 5s  forwards;
+}
+@keyframes splash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

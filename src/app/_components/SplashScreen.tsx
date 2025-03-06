@@ -11,13 +11,13 @@ const SplashScreen = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsSplash(false);
-    }, 5000);
+    }, 7000);
   }, []);
   const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     if (!svgRef.current) return;
-    
+
     const words = gsap.utils.toArray<SVGTextElement>(svgRef.current.querySelectorAll("text") );
     const tl = gsap.timeline({ delay: 0.5 });
     const timePerCharacter = 0.2;
@@ -35,7 +35,7 @@ const SplashScreen = () => {
     <div
       className={
         isSplash
-          ? "fixed top-0 right-0 bottom-0 left-0 z-50 bg-black overflow-hidden"
+          ? "fixed top-0 right-0 bottom-0 left-0 z-50 bg-black overflow-hidden splashScreen"
           : "hidden"
       }
     >

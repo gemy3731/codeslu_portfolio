@@ -35,7 +35,7 @@ const SplashScreen = () => {
     <div
       className={
         isSplash
-          ? "fixed top-0 right-0 bottom-0 left-0 z-50 bg-black overflow-hidden splashScreen"
+          ? "fixed top-0 right-0 bottom-0 left-0 z-50 bg-white overflow-hidden splashScreen"
           : "hidden"
       }
     >
@@ -54,11 +54,11 @@ const SplashScreen = () => {
       <style>{`
         .small {
           font: italic 13px sans-serif;
-          fill:white;
+          fill:black;
         }
         .heavy {
           font: bold 30px sans-serif;
-          fill:white;
+          fill:black;
         }
         .Rrrrr {
           font: italic 40px serif;

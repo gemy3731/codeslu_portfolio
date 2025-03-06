@@ -13,7 +13,7 @@ const ContactUs = () => {
     <section id="contactus" className="container mx-auto py-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="md:col-span-2 flex flex-col gap-8 items-center md:items-start px-4 lg:px-0">
-          <h2 data-aos='fade-up' className="uppercase text-[24px] md:text-[56px] font-semibold  dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-blacko">
+          <h2 data-aos='fade-down' className="uppercase text-[24px] md:text-[56px] font-semibold  dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-blacko">
             Let&lsquo;s Contact
           </h2>
           <p className="max-w-[65%] text-[14px]">

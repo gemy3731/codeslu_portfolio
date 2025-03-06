@@ -308,7 +308,7 @@ html.dark .tabsItems button[aria-selected="true"]{
 }
 
 .splashScreen{
-  animation: splash 2s ease-in-out 5s  forwards;
+  animation: splash 2s ease-in-out 10s  forwards;
 }
 @keyframes splash {
   0% {
@@ -316,5 +316,115 @@ html.dark .tabsItems button[aria-selected="true"]{
   }
   100% {
     opacity: 0;
+  }
+}
+
+
+.codesluScreen>span{
+
+  font-size: clamp(1rem, 22vw, 21rem);
+  font-weight: 900;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 50%, rgb(255, 255, 255) 50%);
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(200, 199, 199);
+}
+/* .hla{
+  font-size: clamp(1rem, 18vw, 21rem);
+  font-weight: 900;
+  background: linear-gradient(to bottom, rgb(0, 0, 0) 50%, rgb(255, 255, 255) 50%);
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(70, 70, 70);
+  background-position: 0 100%;
+  transform: skew(15deg);
+} */
+.c-char{
+  animation: fillTextC 10s linear forwards ;
+
+}
+.o-char{
+  animation: fillTextO 10s 0.4s linear forwards;
+
+}
+.d-char{
+  animation: fillTextD 10s 0.8s linear forwards;
+
+}
+.e-char{
+  animation: fillTextE 10s 1.2s linear forwards;
+
+}
+.s-char{
+  animation: fillTextS 10s 1.6s linear forwards;
+
+}
+.l-char{
+  animation: fillTextL 10s 2s linear forwards;
+
+}
+.u-char{
+  animation: fillTextU 10s 2.4s linear forwards;
+
+}
+
+@keyframes fillTextC {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
+@keyframes fillTextO {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
+@keyframes fillTextD {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
+@keyframes fillTextE {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
+@keyframes fillTextS {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
+@keyframes fillTextL {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
+@keyframes fillTextU {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
   }
 }

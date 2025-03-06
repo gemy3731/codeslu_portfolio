@@ -11,7 +11,7 @@ const SplashScreen = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsSplash(false);
-    }, 7000);
+    }, 0);
   }, []);
   const svgRef = useRef<SVGSVGElement | null>(null);
 

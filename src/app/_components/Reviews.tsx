@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import ReviewsCard from "./ReviewsCard";
 import imgOne from "../../../assests/logo.png";
 import { useEffect, useState } from "react";
+import Aos from "aos";
 
 const images = [
   { url: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland" },
@@ -18,6 +19,13 @@ const animation = { duration: 50000, easing: (t: number) => t };
 const Reviews = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(true);
   const [isMdScreen, setIsMdScreen] = useState(false);
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1500,
+      easing: "ease-in-out",
+    });
+  }, []);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -50,8 +58,8 @@ const Reviews = () => {
     },
   });
   return (
-    <section className="">
-      <h2 className="ms-20 mb-14 dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-black dark:after:bg-gradient-to-r from-transparent via-white to-transparent  uppercase text-[24px] md:text-[48px] font-bold">
+    <section>
+      <h2 data-aos='fade-right' className="ms-20 mb-14 dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-black dark:after:bg-gradient-to-r from-transparent via-white to-transparent  uppercase text-[24px] md:text-[48px] font-bold">
         Our Reviews
       </h2>
       <div ref={sliderRef} className="keen-slider ">

@@ -4,12 +4,14 @@ import NewSlider from "./_components/NewSlider";
 import Portfolio from "./_components/Portfolio";
 import Reviews from "./_components/Reviews";
 import MyFooter from "./_components/MyFooter";
+import SplashScreen from "./_components/SplashScreen";
 
 
 export default function Home() {
   return (
     <>
       <div className="flex flex-col gap-y-40">
+        <SplashScreen/>
         <NewSlider />
         <About />
         <Portfolio />

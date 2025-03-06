@@ -300,3 +300,6 @@ html.dark .tabsItems button[aria-selected="true"]{
 .focus\:ring-4:focus{
   --tw-ring-shadow:0 !important;
 }
+.footerSlider{
+  box-shadow: 0 -2px 10px rgba(138, 138, 138, 0.3);
+}

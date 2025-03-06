@@ -5,6 +5,7 @@ import FooterSlider from "./FooterSlider";
 
 const MyFooter = () => {
   return (
+    <>
     <section
       id="footer"
       className="px-4 pt-20 border-t border-gray-700 border-opacity-50"
@@ -49,11 +50,12 @@ const MyFooter = () => {
         <p>BASED IN HANOI, VIETNAM</p>
         </div>
       </div>
-      <div className="w-full mt-10 mb-0 p-0">
-      <FooterSlider />
-      </div>
         
     </section>
+      <div className="w-full  mb-0 p-0">
+      <FooterSlider />
+      </div>
+    </>
   );
 };
 

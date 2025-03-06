@@ -68,7 +68,7 @@ const SplashScreen = () => {
 
       {/* <text x="20" y="35" className="small">Hello,</text> */}
       <text x="40" y="35" className="heavy">Welcome</text>
-      <text x="55" y="55" className="small">in</text>
+      <text x="55" y="55" className="small">To</text>
       <text x="65" y="55" className="Rrrrr">CodeSlu!</text>
     </svg>
       </div>

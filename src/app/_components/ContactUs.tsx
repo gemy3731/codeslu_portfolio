@@ -15,12 +15,12 @@ const ContactUs = () => {
           </p>
           <div>
             <form className="flex flex-col gap-4">
-                <input id="userName" type="text" name="userName" className="w-[100%] md:w-[70%] dark:bg-black rounded-md focus:outline-none focus:ring-0 dark:focus:border-[#565555] dark:border-[#565555] " placeholder="Name" />
-                <div className="flex flex-col md:flex-row gap-4 w-[100%] md:w-[70%]">
+                <input id="userName" type="text" name="userName" className="w-[100%] md:w-[100%] dark:bg-black rounded-md focus:outline-none focus:ring-0 dark:focus:border-[#565555] dark:border-[#565555] " placeholder="Name" />
+                <div className="flex flex-col md:flex-row gap-4 w-[100%] md:w-[100%]">
                     <input id="email" type="email" name="email" className="w-[100%] md:w-[49%] dark:bg-black rounded-md focus:outline-none focus:ring-0 dark:focus:border-[#565555] dark:border-[#565555] " placeholder="Email" />
                     <input id="phone" type="tel" name="phone" className="w-[100%] md:w-[49%] dark:bg-black rounded-md focus:outline-none focus:ring-0 dark:focus:border-[#565555] dark:border-[#565555] " placeholder="Phone" />
                 </div>
-                <textarea name="message" id="message" rows={5} className="w-[100%] md:w-[70%] dark:bg-black rounded-md focus:outline-none focus:ring-0 dark:focus:border-[#565555] dark:border-[#565555] " placeholder="Message"></textarea>
+                <textarea name="message" id="message" rows={5} className="w-[100%] md:w-[100%] dark:bg-black rounded-md focus:outline-none focus:ring-0 dark:focus:border-[#565555] dark:border-[#565555] " placeholder="Message"></textarea>
                 <button type="submit" className=" w-fit bg-slate-100 border-black hover:bg-black hover:text-white dark:bg-[#1b1b1b] dark:text-white dark:hover:bg-[#fff] dark:hover:text-black rounded-full py-3 px-6 mt-5 border dark:border-white flex items-center gap-2">Send Message<MdArrowOutward className="text-[20px]" /></button>
             </form>
           </div>

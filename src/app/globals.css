@@ -289,3 +289,14 @@ nav a.active{
   }
   
 }
+
+html.dark .tabsItems button[aria-selected="true"]{
+  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+  background: linear-gradient(to bottom, transparent, #a6afbf) !important;
+  border-bottom: 4px solid white  !important;
+  text-align: center;
+  color: white;
+}
+.focus\:ring-4:focus{
+  --tw-ring-shadow:0 !important;
+}

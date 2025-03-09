@@ -330,19 +330,9 @@ html.dark .tabsItems button[aria-selected="true"]{
   background-clip: text;
   color: transparent;
   -webkit-text-stroke: 2px rgb(200, 199, 199);
+  stroke: 2px rgb(200, 199, 199);
 }
-/* .hla{
-  font-size: clamp(1rem, 18vw, 21rem);
-  font-weight: 900;
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 50%, rgb(255, 255, 255) 50%);
-  background-size: 100% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 2px rgb(70, 70, 70);
-  background-position: 0 100%;
-  transform: skew(15deg);
-} */
+
 .c-char{
   animation: fillTextC 10s linear forwards ;
 
@@ -427,4 +417,8 @@ html.dark .tabsItems button[aria-selected="true"]{
   100% {
     background-position: 0 0%;
   }
+}
+
+.forum-header{
+  font-size: clamp(2rem, 2.5vw, 3rem);
 }

@@ -32,7 +32,7 @@ const Forum = () => {
           scrollTrigger: {
             trigger: layer as HTMLElement,
             start: "top top",
-            end: "bottom 90vh",
+            end: "bottom 100vh",
             pin: true,
             pinSpacing: false, 
             scrub: 1,

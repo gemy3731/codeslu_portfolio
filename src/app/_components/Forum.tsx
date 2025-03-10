@@ -52,7 +52,7 @@ const Forum = () => {
           </div>
         ))}
         <div className="h-[800px] xs:h-[750px] md:h-[660px] flex flex-col justify-end">
-          <Button onClick={onSeeMore} className="mx-auto dark:!bg-white dark:text-black">
+          <Button onClick={onSeeMore} className="mx-auto !bg-black text-white dark:!bg-white dark:text-black">
             See more...
           </Button>
         </div>

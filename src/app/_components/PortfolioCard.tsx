@@ -13,7 +13,7 @@ const PortfolioCard = ({ image }: { image: StaticImageData }) => {
     });
   }, []);
   return (
-    <Link href={`/project/productID`}>
+    <Link href={`/project/projectID`}>
       <div
         data-aos="zoom-in"
         className="portfolio-card border-[5px] border-[#f1f5f9] dark:border-[#1b1b1b] rounded-[100px] overflow-hidden "

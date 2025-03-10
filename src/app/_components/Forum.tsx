@@ -43,7 +43,7 @@ const Forum = () => {
   };
 
   return (
-    <section id="forum" className="container mx-auto px-10 xl:px-0">
+    <section id="forum" className="container mx-auto px-10 xl:px-0 relative">
       <AnimatedHeader animation="fade-down" header="Blog" classes="forum-header" />
       <div ref={containerRef}>
         {images.map((image, index) => (
@@ -51,8 +51,8 @@ const Forum = () => {
             <ForumCard image={image} />
           </div>
         ))}
-        <div className="h-[800px] xs:h-[750px] md:h-[660px] flex flex-col justify-end">
-          <Button onClick={onSeeMore} className="mx-auto !bg-black text-white dark:!bg-white dark:text-black">
+        <div className="h-[800px] xs:h-[750px] md:h-[700px] flex flex-col justify-end">
+          <Button onClick={onSeeMore} className="px-4 py-1 rounded-3xl !bg-black text-white dark:!bg-white dark:text-black absolute bottom-0 left-[50%] -translate-x-[50%]">
             See more...
           </Button>
         </div>

@@ -24,11 +24,12 @@ const AboutCard = ({
   }, []);
   return (
     <div
-    className={`md:w-1/2 w-full mx-auto relative `}
+    className={`md:w-1/2 w-full mx-auto relative overflow-hidden rounded-3xl`}
       data-aos={anims}
       data-aos-anchor-placement="top-bottom"
     >
       <Image src={image} alt="" className="rounded-3xl w-full" />
+      <div className="aboutCard-overlay text-white">
       <h4 className="absolute top-4 right-4  font-bold text-right card-text">
         <p>{cardText[0]}</p>
         <p>{cardText[1]}</p>
@@ -36,6 +37,7 @@ const AboutCard = ({
       <span className="absolute bottom-4 left-4 text-[32px] font-bold text-right">
         {bottomText}
       </span>
+      </div>
     </div>
   );
 };

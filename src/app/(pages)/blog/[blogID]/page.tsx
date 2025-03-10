@@ -19,7 +19,7 @@ const page = () => {
     <div className="container mx-auto">
       <div className="flex flex-col gap-6 w-full bg-gradient-to-b dark:from-[#1b1b1b] dark:via-black dark:to-[#1b1b1b] from-slate-100   via-white to-slate-100 p-4 my-4 rounded-3xl">
         <div className="w-full relative h-[50vh] sm:h-[70vh]">
-          <Image src={images.url} alt={images.name} fill={true}></Image>
+          <Image src={images.url} alt={images.name} fill={true} className="rounded-t-3xl"></Image>
         </div>
         <div className="flex flex-col gap-5 p-7 ">
           <div className="uppercase flex flex-col sm:flex-row gap-2 items-center">
@@ -40,7 +40,7 @@ const page = () => {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste,
             laudantium
           </div>
-          <div className="mt-4 dark:text-gray-300">
+          <div className="mt-4 dark:text-[#545a65]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
             consectetur iste consequatur. Fugit nam provident perferendis illo
             repellendus temporibus, voluptatum atque doloribus. Assumenda id

@@ -42,6 +42,12 @@ const MyFooter = () => {
                   WHATSAPP
                 </a>
               </li>
+              <li>
+                <a className="flex gap-1 items-center" href="">
+                  <MdArrowOutward />
+                  FACEBOOK
+                </a>
+              </li>
             </ul>
           </div>
         </div>

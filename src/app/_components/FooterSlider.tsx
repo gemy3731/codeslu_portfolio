@@ -1,18 +1,12 @@
 "use client";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useEffect } from "react";
-import Aos from "aos";
+
 
 const animation = { duration: 50000, easing: (t: number) => t };
 
 const FooterSlider = () => {
-  useEffect(() => {
-    Aos.init({
-      duration: 1500,
-      easing: "ease-in-out",
-    });
-  }, []);
+
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {
@@ -33,7 +27,7 @@ const FooterSlider = () => {
   });
 
   return (
-    <section data-aos='fade-up' className="w-full footerSlider">
+    <section className="w-full footerSlider">
       <div ref={sliderRef} className="keen-slider w-[auto] h-auto">
         <div className="keen-slider__slide  text-responsive2 dark:text-transparent  dark:bg-clip-text  dark:bg-gradient-to-b dark:from-white  dark:to-black">C O D E S L U</div>
         <div className=" keen-slider__slide  text-responsive2 dark:text-transparent  dark:bg-clip-text  dark:bg-gradient-to-b dark:from-white  dark:to-black">C O D E S L U</div>

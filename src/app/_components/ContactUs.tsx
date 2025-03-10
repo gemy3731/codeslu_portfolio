@@ -61,10 +61,14 @@ const ContactUs = () => {
               ></textarea>
               <button
                 type="submit"
-                className=" w-fit bg-slate-100 border-black hover:bg-black hover:text-white dark:bg-[#1b1b1b] dark:text-white dark:hover:bg-[#fff] dark:hover:text-black rounded-full py-3 px-6 mt-5 border dark:border-white flex items-center gap-2"
+                className="forumBtn  relative  rounded-full py-3 px-6 mt-5  flex items-center"
               >
-                Send Message
+                <span className="z-[1] flex items-center gap-2">
+                  Send Message
                 <MdArrowOutward className="text-[20px]" />
+                </span>
+                
+                <div className="forumBtn-overlay"></div>
               </button>
             </form>
           </div>

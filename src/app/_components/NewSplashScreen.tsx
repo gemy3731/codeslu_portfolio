@@ -6,7 +6,7 @@ const NewSplashScreen = () => {
       useEffect(() => {
         setTimeout(() => {
           setIsSplash(false);
-        },14000);
+        },6000);
       }, []);
   return (
     <div className={

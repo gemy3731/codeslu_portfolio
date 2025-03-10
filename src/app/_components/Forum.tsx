@@ -52,8 +52,9 @@ const Forum = () => {
           </div>
         ))}
         <div className="h-[800px] xs:h-[750px] md:h-[700px] flex flex-col justify-end">
-          <Button onClick={onSeeMore} className="px-4 py-1 rounded-3xl !bg-black text-white dark:!bg-white dark:text-black absolute bottom-0 left-[50%] -translate-x-[50%]">
-            See more...
+          <Button onClick={onSeeMore} className="forumBtn px-4 py-1 rounded-3xl  absolute bottom-0 left-[50%] -translate-x-[50%]">
+           <span className="z-[1]"> See more...</span>
+            <div className="forumBtn-overlay"></div>
           </Button>
         </div>
       </div>

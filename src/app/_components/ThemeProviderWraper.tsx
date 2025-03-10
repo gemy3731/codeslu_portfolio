@@ -10,7 +10,7 @@ export default function ThemeProviderWrapper({ children }: { children: React.Rea
     setMounted(true);
   }, []);
 
-  if (!mounted) return <div className="flex items-center justify-center h-screen">Loading...</div>;
+  if (!mounted) return <div className="flex items-center justify-center h-screen "><div className="loader"></div></div>;
 
   return <ThemeProvider attribute="class" defaultTheme="system" enableSystem>{children}</ThemeProvider>;
 }

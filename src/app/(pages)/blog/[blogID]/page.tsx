@@ -1,0 +1,48 @@
+import Image from "next/image";
+import img1 from "../../../../../assests/1_New1.jpg";
+import { GoDotFill } from "react-icons/go";
+
+const images = {
+  url: "https://i.ibb.co/qCkd9jS/img1.jpg",
+  name: "Switzerland",
+};
+
+const page = () => {
+  return (
+    <div className="container mx-auto">
+      <div className="flex flex-col gap-6 w-full bg-gradient-to-b dark:from-[#1b1b1b] dark:via-black dark:to-[#1b1b1b] from-slate-100   via-white to-slate-100 p-4 my-4 rounded-3xl">
+        <div className="w-full relative h-[50vh] sm:h-[70vh]">
+          <Image src={images.url} alt={images.name} fill={true}></Image>
+        </div>
+        <div className="flex flex-col gap-5 p-7 ">
+          <div className="uppercase flex flex-col sm:flex-row gap-2 items-center">
+            <Image
+              src={img1}
+              alt="blogPoster"
+              className="w-[30px] h-[30px] rounded-full"
+            ></Image>
+            <h4 className="font-semibold">ADMIN</h4>
+            <GoDotFill />
+            <h5 className="text-[#8b96b3] dark:text-[#767b84] ">
+              MARCH 1, 2023
+            </h5>
+            <GoDotFill />
+            <h5 className="text-[#8b96b3] dark:text-[#767b84]">DEVELOPMENT</h5>
+          </div>
+          <div className="blog-title">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste,
+            laudantium
+          </div>
+          <div className="mt-4 dark:text-gray-300">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+            consectetur iste consequatur. Fugit nam provident perferendis illo
+            repellendus temporibus, voluptatum atque doloribus. Assumenda id
+            molestiae, nisi dolor accusamus ea aspernatur!
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default page;

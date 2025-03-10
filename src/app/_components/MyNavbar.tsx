@@ -4,15 +4,17 @@ import Link from "next/link";
 import { Navbar } from "flowbite-react";
 import ThemeToggleBtn from "./ThemeToggleBtn";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function MyNavbar() {
   const [isOpened, setIsOpened] = useState(false);
   const [, setActiveSection] = useState<string>("home");
+  const router = useRouter()
   const pathName = usePathname();
   useEffect(() => {
     const handleLinkClick = (event: Event) => {
-      if (!pathName.includes("/project")) {
+
+      if (!pathName.includes("/project") && !pathName.includes("/blog")) {
         event.preventDefault();
         const target = event.currentTarget as HTMLAnchorElement;
         const targetId = target.innerText.toLowerCase().replace(" ", "");
@@ -22,6 +24,8 @@ export default function MyNavbar() {
           targetElement.scrollIntoView({ behavior: "smooth" });
           setActiveSection(targetId || "");
         }
+      }else{
+        router.push('/')
       }
     };
 
@@ -52,7 +56,7 @@ export default function MyNavbar() {
         link.removeEventListener("click", handleLinkClick)
       );
     };
-  }, [pathName]);
+  }, [pathName,router]);
   return (
     <div>
       <Navbar

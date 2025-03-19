@@ -2,6 +2,7 @@ import Image from "next/image";
 import imgOne from "../../../assests/logo.png";
 import { MdArrowOutward } from "react-icons/md";
 import FooterSlider from "./FooterSlider";
+import { bigShouldersInline } from "../layout";
 
 const MyFooter = () => {
   return (
@@ -58,7 +59,7 @@ const MyFooter = () => {
       </div>
         
     </section>
-      <div className="w-full  mb-0 p-0">
+      <div className={`w-full  mb-0 p-0 ${bigShouldersInline.className}`}>
       <FooterSlider />
       </div>
     </>

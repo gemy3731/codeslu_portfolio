@@ -14,7 +14,7 @@ export default function MyNavbar() {
   useEffect(() => {
     const handleLinkClick = (event: Event) => {
 
-      if (!pathName.includes("/project") && !pathName.includes("/blog")) {
+      if (!pathName.includes("/project") && !pathName.includes("/blog") && !pathName.includes("/allProjects")) {
         event.preventDefault();
         const target = event.currentTarget as HTMLAnchorElement;
         const targetId = target.innerText.toLowerCase().replace(" ", "");

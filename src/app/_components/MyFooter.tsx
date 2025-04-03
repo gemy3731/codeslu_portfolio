@@ -2,7 +2,8 @@ import Image from "next/image";
 import imgOne from "../../../assests/logo.png";
 import { MdArrowOutward } from "react-icons/md";
 import FooterSlider from "./FooterSlider";
-import { bigShouldersInline } from "../layout";
+import { bigShouldersInline } from "../Fonts";
+
 
 const MyFooter = () => {
   return (

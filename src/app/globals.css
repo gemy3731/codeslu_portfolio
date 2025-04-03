@@ -293,7 +293,29 @@ nav a.active {
   left: 10px;
   /* height: 200px; */
 }
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 600px) {
+  .scene {
+    width: 220px;
+    height: 170px;
+    perspective: 400px;
+    position: relative;
+  }
+}
+@media screen and (max-width: 480px) {
+  .scene {
+    width: 220px;
+    height: 170px;
+    perspective: 200px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .scene {
+    width: 150px;
+    height: 115px;
+    perspective: 120px;
+  }
+}
+@media screen and (max-width: 360px) {
   .scene {
     width: 150px;
     height: 115px;
@@ -546,3 +568,4 @@ transition: all 0.5s ease-in-out;
 html.dark .forumBtn-overlay{
   background-color: black;
 }
+

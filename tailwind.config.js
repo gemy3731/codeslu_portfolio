@@ -16,7 +16,7 @@ const config = {
         responsive2: "clamp(2rem, 10vw, 10rem)",
       },
       screens: {
-        'xs': '380px',
+        'xs': '400px',
       },
     },
   },

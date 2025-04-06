@@ -52,7 +52,6 @@ export default function NewSlider() {
     try {
       const response = await fetch(`${apiUrl}/api/slider`);
       const data = await response.json();
-      console.log(data);
       setSliderData(data);
       console.log(sliderData);
     } catch (error) {

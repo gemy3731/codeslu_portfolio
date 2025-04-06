@@ -4,14 +4,30 @@ import AboutCard from "./AboutCard";
 import imgThree from "../../../assests/1.jpg";
 import img1 from "../../../assests/2.jpg";
 import Aos from "aos";
+
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+interface IAboutData {
+  description: string;
+  left_card_image: string;
+  right_card_image: string;
+  left_card_lower_text: string;
+  left_card_upper_text: string;
+  right_card_lower_text: string;
+  right_card_upper_text: string;
+}
+
 const About = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
-
+  const [aboutData, setAboutData] = useState<IAboutData>();
   useEffect(() => {
     Aos.init({
       duration: 1500,
       easing: "ease-in-out",
     });
+  }, []);
+  useEffect(() => {
+    getData();
   }, []);
   useEffect(() => {
     const checkScreenSize = () => {
@@ -23,6 +39,17 @@ const About = () => {
 
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  const getData = async () => {
+    try {
+      const response = await fetch(`${apiUrl}/api/about`);
+      const data = await response.json();
+      setAboutData(data[0]);
+    } catch (error) {
+      console.error("Error in getData:", error);
+    }
+  };
+
   return (
     <section
       id="about"
@@ -51,33 +78,22 @@ const About = () => {
           About us
         </h2>
         <p data-aos="fade-left" className="ml-4 mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          dicta accusantium, vitae eius dignissimos molestiae, consequatur
-          numquam maxime itaque, exercitationem distinctio repellendus illo?
-          Perspiciatis expedita, beatae at pariatur similique maxime ipsam
-          labore nesciunt, aut, nulla rem quibusdam quo illum delectus obcaecati
-          possimus! Cumque expedita blanditiis voluptatum saepe voluptates
-          consequatur, tempora assumenda corporis amet eaque totam iste in
-          deserunt sunt non hic soluta rerum optio quisquam corrupti distinctio
-          quas maiores. Recusandae totam nulla nemo, saepe excepturi possimus
-          suscipit optio doloremque quidem repellat cum natus ipsa molestiae
-          odio dolor harum laudantium magnam facere et obcaecati labore eius! Id
-          cupiditate unde molestias tenetur?
+          {aboutData?.description}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-14">
           <div className="px-10 md:p-0">
             <AboutCard
               image={img1}
-              topText={"Years Experience"}
-              bottomText={"8+"}
+              topText={aboutData?.left_card_upper_text ?? "Years Experience"}
+              bottomText={aboutData?.left_card_lower_text ?? "8+"}
               anims={"zoom-in-down"}
             />
           </div>
           <div className="md:translate-y-24 translate-y-0 px-10 md:p-0">
             <AboutCard
               image={imgThree}
-              topText={"Completed Projects"}
-              bottomText={"+1k"}
+              topText={aboutData?.right_card_upper_text ?? "Completed Projects"}
+              bottomText={aboutData?.right_card_lower_text ?? "+1k"}
               anims={"zoom-in-down"}
             />
           </div>

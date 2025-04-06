@@ -20,7 +20,6 @@ interface IFooterData {
 const MyFooter =async () => {
   const res = await fetch(`${apiUrl}/api/footer`);
   const data:IFooterData[] = await res.json();
-  console.log(data[0]);
   return (
     <>
     <section

@@ -1,13 +1,13 @@
 "use client";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ForumCard from "./ForumCard";
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import AnimatedHeader from "./AnimatedHeader";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 const images = [
   { url: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland" },
   { url: "https://i.ibb.co/jrRb11q/img2.jpg", name: "Finland" },
@@ -16,27 +16,26 @@ const images = [
 
 const Forum = () => {
   const router = useRouter();
-  const containerRef = useRef(null);
-
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [lastCardSticky, setLastCardSticky] = useState(true);
+  const spacerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.utils.toArray(".layer").forEach((layer) => {
-        gsap.to(layer as HTMLElement, {
-          scrollTrigger: {
-            trigger: layer as HTMLElement,
-            start: "top top",
-            end: "bottom 100vh",
-            pin: true,
-            pinSpacing: false,
-            scrub: 1,
-          },
-        });
-      });
-    }, containerRef);
+    const handleScroll = () => {
+      const lastCard = document.querySelector('.layer:last-child');
+      if (lastCard && containerRef.current) {
+        const rect = lastCard.getBoundingClientRect();
+        const containerRect = containerRef.current.getBoundingClientRect();
+        
+        // Check if last card is in sticky state
+        setLastCardSticky(rect.top <= containerRect.top);
+      }
+    };
 
-    return () => ctx.revert();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   const onSeeMore = () => {
     router.push("/blog");
@@ -45,17 +44,38 @@ const Forum = () => {
   return (
     <section id="forum" className="container mx-auto px-10 xl:px-0 relative">
       <AnimatedHeader animation="fade-down" header="Blog" classes="forum-header" />
-      <div ref={containerRef}>
-        {images.map((image, index) => (
-          <div key={index} className="layer">
-            <ForumCard image={image} />
+      <div ref={containerRef} className="mt-20 relative">
+        {/* Cards container with z-index */}
+        <div className="relative z-10">
+          {images.map((image, index) => (
+            <div 
+              key={index} 
+              className={`layer ${index === images.length - 1 ? '!sticky' : 'sticky'} top-0`}
+            >
+              <ForumCard image={image} />
+            </div>
+          ))}
+        </div>
+
+        {/* Spacer for button positioning */}
+        <div 
+          ref={spacerRef} 
+          className={`transition-all duration-300 ${
+            lastCardSticky ? 'h-[700px]' : 'h-[100px]'
+          }`}
+        />
+
+        {/* Button with dynamic positioning */}
+        <div className="sticky bottom-10 z-0 mt-10">
+          <div className="flex justify-center">
+            <Button 
+              onClick={onSeeMore} 
+              className="forumBtn px-4 py-1 rounded-3xl relative z-0"
+            >
+              <span className="z-[1]">See more...</span>
+              <div className="forumBtn-overlay"></div>
+            </Button>
           </div>
-        ))}
-        <div className="h-[800px] xs:h-[750px] md:h-[700px] flex flex-col justify-end">
-          <Button onClick={onSeeMore} className="forumBtn px-4 py-1 rounded-3xl  absolute bottom-0 left-[50%] -translate-x-[50%]">
-           <span className="z-[1]"> See more...</span>
-            <div className="forumBtn-overlay"></div>
-          </Button>
         </div>
       </div>
     </section>

@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import PortfolioTabs from "./PortfolioTabs";
 import Aos from "aos";
-import { Button } from "flowbite-react";
-import { useRouter } from "next/navigation";
+import SeeMoreBtn from "./SeeMoreBtn";
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 export interface IProjectData {
   _id: string;
@@ -16,7 +15,6 @@ export interface IProjectData {
   category: string;
 }
 const Portfolio = () => {
-  const router = useRouter();
   const [projects, setProjects] = useState<IProjectData[]>([]);
   useEffect(() => {
       Aos.init({
@@ -37,9 +35,6 @@ const Portfolio = () => {
       };
       getData();
     }, []);
-    const onSeeMore = () => {
-      router.push("/allProjects");
-    };
   return (
     <section id="portfolio" className="overflow-x-hidden">
       <div className="container mx-auto py-10 flex flex-col gap-8">
@@ -51,10 +46,7 @@ const Portfolio = () => {
         </div>
       </div>
       {/* <div className="shine-line"></div> */}
-      <Button onClick={onSeeMore} className="forumBtn px-4 py-1 rounded-3xl  mx-auto mb-20">
-           <span className="z-[1]"> See more...</span>
-            <div className="forumBtn-overlay"></div>
-          </Button>
+      <SeeMoreBtn path="allProjects" />
 
     </section>
   );

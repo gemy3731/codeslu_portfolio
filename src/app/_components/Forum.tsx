@@ -1,12 +1,9 @@
 "use client";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ForumCard from "./ForumCard";
-// import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "flowbite-react";
-import { useRouter } from "next/navigation";
 import AnimatedHeader from "./AnimatedHeader";
 import { IBlogData } from "../(pages)/blog/[blogID]/page";
+import SeeMoreBtn from "./SeeMoreBtn";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
@@ -17,7 +14,6 @@ const images = [
 ];
 
 const Forum = () => {
-  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const [lastCardSticky, setLastCardSticky] = useState(true);
   const spacerRef = useRef<HTMLDivElement>(null);
@@ -49,9 +45,7 @@ const Forum = () => {
   }, []);
 
 
-  const onSeeMore = () => {
-    router.push("/blog");
-  };
+
 
   return (
     <section id="forum" className="container mx-auto px-10 xl:px-0 relative">
@@ -80,13 +74,7 @@ const Forum = () => {
         {/* Button with dynamic positioning */}
         <div className="sticky bottom-10 z-0 mt-10">
           <div className="flex justify-center">
-            <Button 
-              onClick={onSeeMore} 
-              className="forumBtn px-4 py-1 rounded-3xl relative z-0"
-            >
-              <span className="z-[1]">See more...</span>
-              <div className="forumBtn-overlay"></div>
-            </Button>
+          <SeeMoreBtn path="blog" />
           </div>
         </div>
       </div>

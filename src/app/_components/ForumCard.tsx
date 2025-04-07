@@ -1,28 +1,27 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import { IBlogData } from "../(pages)/blog/[blogID]/page";
-// import { useEffect } from "react";
-// import { IBlogData } from "../(pages)/blog/[blogID]/page";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Loader from "./Loader";
 
-// const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const ForumCard = ({ image, blog }: { image: string, blog: IBlogData }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    router.push(`/blog/${blog?._id}`);
+  };
 
+  if (isLoading) {
+    return <Loader />;
+  }
 
-
-const ForumCard =  ({ image,blog }: { image: string,blog:IBlogData }) => {
-  // useEffect(()=>{
-  //   const getData = async () => {
-  //     const res = await fetch(`${apiUrl}/api/blog`);
-  //     const blogs:IBlogData[] = await res.json();
-  //     // const blog = blogs.find((blog)=>blog._id===blogID.blogID);
-  //     console.log(blogs)
-  //   }
-  //   getData()
-  // },[])
-    // const res = await fetch(`${apiUrl}/api/blog`);
-    // const blogs:IBlogData[] = await res.json();
   return (
-    <Link href={`/blog/${blog?._id}`}>
+    <a href={`/blog/${blog?._id}`} onClick={handleClick}>
       <div className="forumCard flex flex-col gap-6 w-full bg-gradient-to-b dark:from-[#1b1b1b] dark:via-black dark:to-[#1b1b1b] from-slate-100   via-white to-slate-100 p-4 my-4 rounded-3xl">
         <div className="w-full relative h-[50vh] sm:h-[70vh] rounded-t-3xl overflow-hidden">
           <Image
@@ -47,7 +46,7 @@ const ForumCard =  ({ image,blog }: { image: string,blog:IBlogData }) => {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 };
 

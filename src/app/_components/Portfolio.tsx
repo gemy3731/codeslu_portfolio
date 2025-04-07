@@ -1,17 +1,41 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PortfolioTabs from "./PortfolioTabs";
 import Aos from "aos";
 import { Button } from "flowbite-react";
 import { useRouter } from "next/navigation";
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+export interface IProjectData {
+  _id: string;
+  name: string;
+  description: string;
+  poster: string;
+  screens?: string[];
+  demo_link?: string;
+  purchase_link?: string;
+  category: string;
+}
 const Portfolio = () => {
   const router = useRouter();
+  const [projects, setProjects] = useState<IProjectData[]>([]);
   useEffect(() => {
       Aos.init({
         duration: 1500,
         easing: "ease-in-out",
       });
+    }, []);
+    useEffect(() => {
+      const getData = async () => {
+        try {
+          const response = await fetch(`${apiUrl}/api/projects`);
+          const data = await response.json();
+          console.log("projects",data)
+          setProjects(data);
+        } catch (error) {
+          console.error("Error in getData:", error);
+        }
+      };
+      getData();
     }, []);
     const onSeeMore = () => {
       router.push("/allProjects");
@@ -23,7 +47,7 @@ const Portfolio = () => {
           Portfolio
         </h2>
         <div>
-          <PortfolioTabs />
+          <PortfolioTabs projects={projects} />
         </div>
       </div>
       {/* <div className="shine-line"></div> */}

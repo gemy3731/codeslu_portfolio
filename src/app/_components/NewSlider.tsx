@@ -63,12 +63,12 @@ export default function NewSlider() {
     <section id="home" className="container mx-auto">
       <div className="slider-container mx-auto rounded-xl">
         <div className="new-slide">
-          {sliderData.map((item) => (
+          {sliderData.map((item,i) => (
             <div
               key={item._id}
               className="item"
               style={{
-                backgroundImage: `url(${images[0].url})`,
+                backgroundImage: `url(${images[i].url})`,
               }}
             >
               <div className="slider-content">

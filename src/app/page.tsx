@@ -7,6 +7,8 @@ import MyFooter from "./_components/MyFooter";
 import NewSplashScreen from "./_components/NewSplashScreen";
 import Forum from "./_components/Forum";
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <>

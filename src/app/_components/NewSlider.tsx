@@ -23,20 +23,30 @@ interface ISliderData {
 
 export default function NewSlider() {
   const [items, setItems] = useState(images);
-  const [sliderData, setSliderData] = useState<ISliderData[]>([]);
+  const [, setSliderData] = useState<ISliderData[]>([]);
   
   useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/slider`);
+        const data = await response.json();
+        setSliderData(data);
+      } catch (error) {
+        console.error("Error in getData:", error);
+      }
+    };
     getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   useEffect(() => {
     const slideInterval = setInterval(()=>{
         nextSlide()
     }, 4000);
-        return () => {
-            clearInterval(slideInterval)
-        }
-}, []);
+    return () => {
+        clearInterval(slideInterval)
+    }
+  }, []);
+
   const nextSlide = () => {
     setItems((prevItems) => [...prevItems.slice(1), prevItems[0]]);
   };
@@ -47,18 +57,6 @@ export default function NewSlider() {
       ...prevItems.slice(0, prevItems.length - 1),
     ]);
   };
-  
-  const getData = async () => {
-    try {
-      const response = await fetch(`${apiUrl}/api/slider`);
-      const data = await response.json();
-      setSliderData(data);
-      console.log(sliderData);
-    } catch (error) {
-      console.error("Error in getData:", error);
-    }
-  };
-
 
   return (
     <section id="home" className="container mx-auto">

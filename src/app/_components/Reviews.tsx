@@ -15,20 +15,42 @@ export interface IReviewsData {
   role: string;
   description: string;
 }
-// const images = [
-//   { url: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland" },
-//   { url: "https://i.ibb.co/jrRb11q/img2.jpg", name: "Finland" },
-//   { url: "https://i.ibb.co/NSwVv8D/img3.jpg", name: "Iceland" },
-//   { url: "https://i.ibb.co/Bq4Q0M8/img4.jpg", name: "Australia" },
-//   { url: "https://i.ibb.co/jTQfmTq/img5.jpg", name: "Netherland" },
-//   { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
-// ];
+
 const animation = { duration: 50000, easing: (t: number) => t };
 
 const Reviews = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(true);
   const [isMdScreen, setIsMdScreen] = useState(false);
   const [reviewsData, setReviewsData] = useState<IReviewsData[]>([]);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+    {
+      slides: {
+        perView: isLargeScreen ? 4 : isMdScreen ? 3 : 1,
+        spacing: 30,
+      },
+      loop: true,
+      drag: false,
+      created(s) {
+        s.moveToIdx(5, true, animation);
+      },
+      updated(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation);
+      },
+      animationEnded(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation);
+      },
+    }
+  );
+
+  const getData = async () => {
+    try {
+      const response = await fetch(`${apiUrl}/api/reviews`);
+      const data = await response.json();
+      setReviewsData(data);
+    } catch (error) {
+      console.error("Error in getData:", error);
+    }
+  };
 
   useEffect(() => {
     getData();
@@ -53,41 +75,19 @@ const Reviews = () => {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
-    slides: {
-      perView: isLargeScreen ? 4 : isMdScreen ? 3 : 1,
-      spacing: 30,
-    },
-    loop: true,
-    renderMode: "performance",
-    drag: false,
-    created(s) {
-      s.moveToIdx(5, true, animation);
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
-    },
-  });
-
-  const getData = async () => {
-    try {
-      const response = await fetch(`${apiUrl}/api/reviews`);
-      const data = await response.json();
-      setReviewsData(data);
-    } catch (error) {
-      console.error("Error in getData:", error);
+  // عند تغيير حجم الشاشة أو تحميل البيانات، تحديث النزلاق
+  useEffect(() => {
+    if (instanceRef.current && reviewsData.length > 0) {
+      instanceRef.current.update();
     }
-  };
+  }, [isLargeScreen, isMdScreen, reviewsData, instanceRef]);
 
   return (
     <section>
       <h2 data-aos='fade-right' className="ms-20 mb-14 dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-black dark:after:bg-gradient-to-r from-transparent via-white to-transparent  uppercase text-[24px] md:text-[48px] font-bold">
         Our Reviews
       </h2>
-      <div ref={sliderRef} className="keen-slider ">
+      <div ref={sliderRef} className="keen-slider">
         {reviewsData.map((review) => (
           <div key={review._id} className="keen-slider__slide">
             <ReviewsCard image={imgOne} review={review} />

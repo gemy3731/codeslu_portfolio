@@ -22,14 +22,15 @@ interface ISliderData {
 }
 
 export default function NewSlider() {
-  const [items, setItems] = useState(images);
-  const [, setSliderData] = useState<ISliderData[]>([]);
+  // const [items, setItems] = useState(images);
+  const [sliderData, setSliderData] = useState<ISliderData[]>([]);
   
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await fetch(`${apiUrl}/api/slider`);
         const data = await response.json();
+        console.log(data)
         setSliderData(data);
       } catch (error) {
         console.error("Error in getData:", error);
@@ -48,11 +49,11 @@ export default function NewSlider() {
   }, []);
 
   const nextSlide = () => {
-    setItems((prevItems) => [...prevItems.slice(1), prevItems[0]]);
+    setSliderData((prevItems) => [...prevItems.slice(1), prevItems[0]]);
   };
 
   const prevSlide = () => {
-    setItems((prevItems) => [
+    setSliderData((prevItems) => [
       prevItems[prevItems.length - 1],
       ...prevItems.slice(0, prevItems.length - 1),
     ]);
@@ -62,18 +63,18 @@ export default function NewSlider() {
     <section id="home" className="container mx-auto">
       <div className="slider-container mx-auto rounded-xl">
         <div className="new-slide">
-          {items.map((item, index) => (
+          {sliderData.map((item) => (
             <div
-              key={index}
+              key={item._id}
               className="item"
               style={{
-                backgroundImage: `url(${item.url})`,
+                backgroundImage: `url(${images[0].url})`,
               }}
             >
               <div className="slider-content">
                 <div className="slider-name sm:text-[40px]">{item.name}</div>
                 <div className="des text-[14px] sm:text-[18px]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  {item.description}
                 </div>
               </div>
             </div>

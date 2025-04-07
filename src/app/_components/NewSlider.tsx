@@ -30,7 +30,7 @@ export default function NewSlider() {
       try {
         const response = await fetch(`${apiUrl}/api/slider`);
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         setSliderData(data);
       } catch (error) {
         console.error("Error in getData:", error);

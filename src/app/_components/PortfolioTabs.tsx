@@ -13,7 +13,7 @@ import { IProjectData } from "./Portfolio";
 const PortfolioTabs = ({projects}:{projects:IProjectData[]}) => {
   const [activeTab, setActiveTab] = useState('ios')
   useEffect(() => {
-    console.log(projects.filter(project=>project.category==="ios"))
+    // console.log(projects.filter(project=>project.category==="ios"))
     const tabs = document.querySelectorAll('.tabsItems button');
     tabs.forEach((tab) => {
       tab.addEventListener('click', (e) => {

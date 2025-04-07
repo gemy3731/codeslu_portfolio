@@ -6,8 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import AnimatedHeader from "./AnimatedHeader";
+import { IBlogData } from "../(pages)/blog/[blogID]/page";
 
-// gsap.registerPlugin(ScrollTrigger);
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 const images = [
   { url: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland" },
   { url: "https://i.ibb.co/jrRb11q/img2.jpg", name: "Finland" },
@@ -19,6 +21,16 @@ const Forum = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [lastCardSticky, setLastCardSticky] = useState(true);
   const spacerRef = useRef<HTMLDivElement>(null);
+  const [blogsData,setBlogsData] = useState<IBlogData[]>([])
+  useEffect(()=>{
+    const getData = async () => {
+      const res = await fetch(`${apiUrl}/api/blog`);
+      const blogs:IBlogData[] = await res.json();
+      console.log(blogs)
+      setBlogsData(blogs)
+    }
+    getData()
+  },[])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,12 +59,12 @@ const Forum = () => {
       <div ref={containerRef} className="mt-20 relative">
         {/* Cards container with z-index */}
         <div className="relative z-10">
-          {images.map((image, index) => (
+          {blogsData.map((blog, index) => (
             <div 
               key={index} 
               className={`layer ${index === images.length - 1 ? '!sticky' : 'sticky'} top-0`}
             >
-              <ForumCard image={image} />
+              <ForumCard image={images[index].url} blog={blog} />
             </div>
           ))}
         </div>

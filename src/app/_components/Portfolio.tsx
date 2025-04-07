@@ -29,7 +29,7 @@ const Portfolio = () => {
         try {
           const response = await fetch(`${apiUrl}/api/projects`);
           const data = await response.json();
-          console.log("projects",data)
+          // console.log("projects",data)
           setProjects(data);
         } catch (error) {
           console.error("Error in getData:", error);

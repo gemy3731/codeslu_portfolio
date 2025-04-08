@@ -3,6 +3,7 @@ import imgOne from "../../../assests/logo.png";
 import { MdArrowOutward } from "react-icons/md";
 import FooterSlider from "./FooterSlider";
 import { bigShouldersInline } from "../Fonts";
+import TermsAndPolicy from "./TermsAndPolicy";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 interface IFooterData {
@@ -59,6 +60,7 @@ const MyFooter =async () => {
         </div>
         <div className="font-semibold text-[#515151] flex flex-col md:flex-row items-center md:justify-between justify-center mt-10">
         <p>{data[0].all_rights}</p>
+        <TermsAndPolicy />
         <p>{data[0].based_in}</p>
         </div>
       </div>

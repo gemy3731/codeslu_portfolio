@@ -1,5 +1,5 @@
 import Image from "next/image";
-import imgThree from "../../../../../assests/1.jpg";
+import imgThree from "../../../../../assets/1.jpg";
 import ScreensSlider from "@/app/_components/ScreensSlider";
 import { Metadata } from "next";
 import { Button } from "flowbite-react";

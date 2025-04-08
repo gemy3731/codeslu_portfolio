@@ -2,7 +2,7 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import ReviewsCard from "./ReviewsCard";
-import imgOne from "../../../assests/logo.png";
+import imgOne from "../../../assets/logo.png";
 import { useEffect, useState } from "react";
 import Aos from "aos";
 

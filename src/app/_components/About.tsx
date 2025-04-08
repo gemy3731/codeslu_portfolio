@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import AboutCard from "./AboutCard";
-import imgThree from "../../../assests/1.jpg";
-import img1 from "../../../assests/2.jpg";
+import imgThree from "../../../assets/1.jpg";
+import img1 from "../../../assets/2.jpg";
 import Aos from "aos";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;

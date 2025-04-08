@@ -2,7 +2,7 @@
 import Aos from "aos";
 import { useEffect } from "react";
 import { MdArrowOutward } from "react-icons/md";
-import img1 from "../../../assests/logo.png";
+import img1 from "../../../assets/logo.png";
 import Image from "next/image";
 const ContactUs = () => {
   useEffect(() => {

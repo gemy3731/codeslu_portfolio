@@ -1,5 +1,5 @@
 import Image from "next/image";
-import imgOne from "../../../assests/logo.png";
+import imgOne from "../../../assets/logo.png";
 import { MdArrowOutward } from "react-icons/md";
 import FooterSlider from "./FooterSlider";
 import { bigShouldersInline } from "../Fonts";

@@ -6,6 +6,7 @@ import Reviews from "./_components/Reviews";
 import MyFooter from "./_components/MyFooter";
 import NewSplashScreen from "./_components/NewSplashScreen";
 import Forum from "./_components/Forum";
+import DataSlider from "./_components/DataSlider";
 
 export const dynamic = 'force-dynamic';
 
@@ -16,6 +17,7 @@ export default function Home() {
         <NewSplashScreen />
         <NewSlider />
         <About />
+        <DataSlider />
         <Portfolio />
         <Forum />
         <Reviews />

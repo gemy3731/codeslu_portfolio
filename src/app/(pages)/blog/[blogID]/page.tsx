@@ -1,5 +1,5 @@
 import Image from "next/image";
-import img1 from "../../../../../assests/1_New1.jpg";
+import img1 from "../../../../../assets/1_New1.jpg";
 import { GoDotFill } from "react-icons/go";
 import { Metadata } from "next";
 

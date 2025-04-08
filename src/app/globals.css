@@ -595,4 +595,46 @@ html.dark .forumBtn-overlay{
 .myKeen{
   transform: rotate(45deg);
 }
+.firstIcon{
+  animation: slideIn1 2s ease-in-out forwards, rotateIcon1 2s linear infinite;
+  animation-delay: 0s, 2s;
+}
+.secondIcon{
+  animation: slideIn2 2s ease-in-out forwards, rotateIcon2 2s linear infinite ;
+  animation-delay: 0s, 2s;
+}
+
+@keyframes rotateIcon1{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateIcon2{
+  0%{
+    transform: rotate(0deg) ;
+  }
+  100%{
+    transform: rotate(-360deg) ;
+  }
+}
+
+@keyframes slideIn1 {
+  from {
+    transform: translateX(-600%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideIn2 {
+  from {
+    transform: translateX(600%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 

@@ -7,6 +7,7 @@ import MyFooter from "./_components/MyFooter";
 import NewSplashScreen from "./_components/NewSplashScreen";
 import Forum from "./_components/Forum";
 import DataSlider from "./_components/DataSlider";
+// import Maintenance from "./_components/Maintenance";
 
 export const dynamic = 'force-dynamic';
 
@@ -23,6 +24,7 @@ export default function Home() {
         <Reviews />
         <ContactUs />
         <MyFooter />
+        {/* <Maintenance /> */}
       </div>
     </>
   );

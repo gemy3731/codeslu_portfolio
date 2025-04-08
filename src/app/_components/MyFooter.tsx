@@ -37,12 +37,12 @@ const MyFooter =async () => {
             ></Image>
             <h3 className="text-[1rem] md:text-[1.8rem] font-semibold">CodeSlu</h3>
           </div>
-          <div className="cols-span-12 md:col-span-10 flex flex-col justify-between items-center">
+          <div className="cols-span-12 md:col-span-10 flex flex-col justify-center items-center">
             <h4 className="font-semibold text-[#515151] mb-3">
               REACH OUT TO US
             </h4>
             <p className="md:text-[1.5rem]">(+20) {data[0].phone}</p>
-            <p className="md:text-[1.5rem]">{data[0].email}</p>
+            {/* <p className="md:text-[1.5rem]">{data[0].email}</p> */}
           </div>
           <div className="cols-span-12 md:col-span-1 flex flex-col justify-between items-center md:items-end">
             <h4 className="self-s font-semibold text-[#515151] mb-3">SOCIAL</h4>

@@ -17,9 +17,9 @@ export default function Home() {
         <NewSplashScreen />
         <NewSlider />
         <About />
-        <DataSlider />
         <Portfolio />
         <Forum />
+        <DataSlider />
         <Reviews />
         <ContactUs />
         <MyFooter />

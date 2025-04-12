@@ -22,7 +22,7 @@ const images = [
 const page = async ({params}:{params:Promise<{projectID:string}>}) => {
   const projectID = await params;
   console.log(projectID.projectID)
-  const res = await fetch(`${apiUrl}/api/projects`);
+  const res = await fetch(`${apiUrl}/api/projects`,{cache:'no-cache'});
   const projects:IProjectData[] = await res.json();
   const project = projects.find((project)=>project._id===projectID.projectID);
   console.log(project)

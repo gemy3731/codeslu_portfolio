@@ -19,7 +19,7 @@ const images = [
 const page = async () => {
 
 
-  const res = await fetch(`${apiUrl}/api/blog`);
+  const res = await fetch(`${apiUrl}/api/blog`,{cache:'no-cache'});
   const blogs:IBlogData[] = await res.json();
   console.log(blogs)
 

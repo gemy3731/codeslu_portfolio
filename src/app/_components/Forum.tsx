@@ -20,7 +20,7 @@ const Forum = () => {
   const [blogsData,setBlogsData] = useState<IBlogData[]>([])
   useEffect(()=>{
     const getData = async () => {
-      const res = await fetch(`${apiUrl}/api/blog`);
+      const res = await fetch(`${apiUrl}/api/blog`,{cache:'no-cache'});
       const blogs:IBlogData[] = await res.json();
       console.log(blogs)
       setBlogsData(blogs)

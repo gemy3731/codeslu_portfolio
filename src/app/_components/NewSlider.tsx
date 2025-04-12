@@ -28,7 +28,7 @@ export default function NewSlider() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(`${apiUrl}/api/slider`);
+        const response = await fetch(`${apiUrl}/api/slider`,{cache:'no-cache'});
         const data = await response.json();
         // console.log(data)
         setSliderData(data);

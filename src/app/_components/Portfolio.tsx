@@ -25,7 +25,7 @@ const Portfolio = () => {
     useEffect(() => {
       const getData = async () => {
         try {
-          const response = await fetch(`${apiUrl}/api/projects`);
+          const response = await fetch(`${apiUrl}/api/projects`,{cache:'no-cache'});
           const data = await response.json();
           // console.log("projects",data)
           setProjects(data);

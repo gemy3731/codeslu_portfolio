@@ -19,7 +19,7 @@ interface IFooterData {
   }[];
 }
 const MyFooter =async () => {
-  const res = await fetch(`${apiUrl}/api/footer`);
+  const res = await fetch(`${apiUrl}/api/footer`,{cache:'no-cache'});
   const data:IFooterData[] = await res.json();
   return (
     <>

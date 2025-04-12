@@ -44,7 +44,7 @@ const Reviews = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/reviews`);
+      const response = await fetch(`${apiUrl}/api/reviews`,{cache:'no-cache'});
       const data = await response.json();
       setReviewsData(data);
     } catch (error) {

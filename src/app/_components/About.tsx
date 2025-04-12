@@ -42,7 +42,7 @@ const About = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/about`);
+      const response = await fetch(`${apiUrl}/api/about`,{cache:'no-cache'});
       const data = await response.json();
       setAboutData(data[0]);
     } catch (error) {

@@ -590,6 +590,8 @@ html.dark .forumBtn-overlay{
 .dataSlide img {
   /* transform: rotate(45deg); */
   border-radius: 10px;
+  /* width: 80%; */
+  /* height: calc(100% / 3); */
   /* margin-right: 80px; */
 }
 .myKeen{
@@ -637,3 +639,8 @@ html.dark .forumBtn-overlay{
     transform: translateX(0);
   }
 }
+
+
+
+
+

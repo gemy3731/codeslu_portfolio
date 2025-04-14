@@ -12,6 +12,9 @@ export interface IProjectData {
   screens?: string[];
   demo_link?: string;
   purchase_link?: string;
+  app_store_link?: string;
+  google_play_link?: string;
+  video_link?: string;
   category: string;
 }
 const Portfolio = () => {

@@ -19,16 +19,18 @@ const images = [
   { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
 ];
 
-const page = async ({params}:{params:Promise<{projectID:string}>}) => {
+const page = async ({ params }: { params: Promise<{ projectID: string }> }) => {
   const projectID = await params;
-  console.log(projectID.projectID)
-  const res = await fetch(`${apiUrl}/api/projects`,{cache:'no-cache'});
-  const projects:IProjectData[] = await res.json();
-  const project = projects.find((project)=>project._id===projectID.projectID);
-  console.log(project)
+  console.log(projectID.projectID);
+  const res = await fetch(`${apiUrl}/api/projects`, { cache: "no-cache" });
+  const projects: IProjectData[] = await res.json();
+  const project = projects.find(
+    (project) => project._id === projectID.projectID
+  );
+  console.log(project);
   return (
     <>
-      <div className="container mx-auto">
+      <div className="px-[10px] md:px-[50px] lg:px-[10px] xl:px-[120px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-28  mt-[156px] mb-10 border dark:border-gray-800 rounded-[32px] pt-[139px] pe-[111px] pb-[93px] ps-[84px] shadow-lg">
           <div className="flex flex-col gap-10 items-center aspect-[568/478]">
             <Image
@@ -39,31 +41,68 @@ const page = async ({params}:{params:Promise<{projectID:string}>}) => {
             <div className="mt-10 px-10 md:px-0 flex justify-center items-center">
               <ScreensSlider screens={images} />
             </div>
+            {project?.video_link && (
+                <div className="w-full mt-8">
+                <iframe
+                  width="100%"
+                  height="350"
+                  src={`https://www.youtube.com/embed/${project?.video_link}`}
+                  title="YouTube Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-3xl"
+                  style={{ border: "none" }}
+                ></iframe>
+              </div>
+              )}
           </div>
           <div className="flex flex-col gap-16">
             <h2 className="leading-[43.57px] uppercase text-responsive1 font-bold dark:text-transparent dark:bg-clip-text  dark:bg-gradient-to-t dark:from-transparent dark:via-white dark:to-transparent after:bg-black">
               {project?.name}
             </h2>
-            <p>
-               {project?.description}
-            </p>
-            <div className='flex flex-col sm:flex-row lg:flex-col gap-8'>
-              <Button
-                href={project?.demo_link}
-                target="_blank"
-                className="forumBtn px-4 py-1 rounded-3xl lg:!w-full mx-auto sm:mx-0 lg:mx-auto  !shadow-2xl dark:!shadow-white/30"
-              >
-                <span className="z-[1]">Demo link</span>
-                <div className="forumBtn-overlay"></div>
-              </Button>
-              <Button
-                href={project?.purchase_link}
-                target="_blank"
-                className="forumBtn px-4 py-1 rounded-3xl lg:!w-full mx-auto sm:mx-0 lg:mx-auto !shadow-2xl dark:!shadow-white/30"
-              >
-                <span className="z-[1]">purchase link</span>
-                <div className="forumBtn-overlay"></div>
-              </Button>
+            <p>{project?.description}</p>
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-8">
+              {project?.demo_link && (
+                <Button
+                  href={project?.demo_link}
+                  target="_blank"
+                  className="forumBtn px-4 py-1 rounded-3xl lg:!w-full mx-auto sm:mx-0 lg:mx-auto  !shadow-2xl dark:!shadow-white/30"
+                >
+                  <span className="z-[1]">Demo link</span>
+                  <div className="forumBtn-overlay"></div>
+                </Button>
+              )}
+              {project?.purchase_link && (
+                <Button
+                  href={project?.purchase_link}
+                  target="_blank"
+                  className="forumBtn px-4 py-1 rounded-3xl lg:!w-full mx-auto sm:mx-0 lg:mx-auto !shadow-2xl dark:!shadow-white/30"
+                >
+                  <span className="z-[1]">purchase link</span>
+                  <div className="forumBtn-overlay"></div>
+                </Button>
+              )}
+              {project?.app_store_link && (
+                <Button
+                  href={project?.app_store_link}
+                  target="_blank"
+                  className="forumBtn px-4 py-1 rounded-3xl lg:!w-full mx-auto sm:mx-0 lg:mx-auto !shadow-2xl dark:!shadow-white/30"
+                >
+                  <span className="z-[1]">App Store Link</span>
+                  <div className="forumBtn-overlay"></div>
+                </Button>
+              )}
+              {project?.google_play_link && (
+                <Button
+                  href={project?.google_play_link}
+                  target="_blank"
+                  className="forumBtn px-4 py-1 rounded-3xl lg:!w-full mx-auto sm:mx-0 lg:mx-auto !shadow-2xl dark:!shadow-white/30"
+                >
+                  <span className="z-[1]">Google Play Link</span>
+                  <div className="forumBtn-overlay"></div>
+                </Button>
+              )}
+              
             </div>
           </div>
         </div>

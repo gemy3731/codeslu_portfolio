@@ -9,7 +9,7 @@ const page = async () => {
   return (
     <div className='container mx-auto px-4 md:px-0 py-10'>
       <h1 className='text-3xl font-bold text-center mb-10'>Terms and Conditions</h1>
-      <p  dangerouslySetInnerHTML={{ __html: data }}/>
+      <p  dangerouslySetInnerHTML={{ __html: data[0].description }}/>
     </div>
   )
 }

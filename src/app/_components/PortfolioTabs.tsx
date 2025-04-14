@@ -30,7 +30,6 @@ const PortfolioTabs = ({projects}:{projects:IProjectData[]}) => {
 
   }, [activeTab,projects])
   
-  
   useEffect(() => {
     Aos.init({
       duration: 1500,
@@ -40,29 +39,29 @@ const PortfolioTabs = ({projects}:{projects:IProjectData[]}) => {
   return (
     <Tabs aria-label="Tabs with icons" variant="underline" className="flex justify-center gap-10 tabsItems" >
       {projects.filter(project=>project.category==="ios").length>0&&<Tabs.Item active title="IOS" icon={ImAppleinc}  >
-          <div data-aos="zoom-in" className="grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-0">
-        {projects.filter(project=>project.category==="ios").map((project) => (
+          <div data-aos="zoom-in" className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-0">
+        {projects.filter(project=>project.category==="ios").splice(0,4).map((project) => (
           <PortfolioCard key={project._id} image={imgThree} activeTab={activeTab} tab='ios' project={project} />
         ))}
         </div>
       </Tabs.Item>}
      { projects.filter(project=>project.category==="android").length>0&&<Tabs.Item title="ANDROID" icon={GrAndroid} >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-0">
-        {projects.filter(project=>project.category==="android").map((project) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-0">
+        {projects.filter(project=>project.category==="android").splice(0,4).map((project) => (
           <PortfolioCard key={project._id} image={img1} activeTab={activeTab} tab='android' project={project} />
         ))}
         </div>
       </Tabs.Item>}
       {projects.filter(project=>project.category==="web").length>0&&<Tabs.Item title="WEB" icon={IoPlanetSharp} >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-0">
-        {projects.filter(project=>project.category==="web").map((project) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-0">
+        {projects.filter(project=>project.category==="web").splice(0,4).map((project) => (
           <PortfolioCard key={project._id} image={imgThree} activeTab={activeTab} tab='web' project={project} />
         ))}
         </div>
       </Tabs.Item>}
       {projects.filter(project=>project.category==="games").length>0&&<Tabs.Item title="GAMES" icon={FaGamepad} >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-0">
-        {projects.filter(project=>project.category==="games").map((project) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-0">
+        {projects.filter(project=>project.category==="games").splice(0,4).map((project) => (
           <PortfolioCard key={project._id} image={img1} activeTab={activeTab} tab='games' project={project} />
         ))}
         </div>

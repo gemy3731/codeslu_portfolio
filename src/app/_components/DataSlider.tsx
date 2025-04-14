@@ -53,7 +53,7 @@ const DataSlider = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, [apiUrl]);
+  }, []);
 
   useEffect(() => {
     getImages();

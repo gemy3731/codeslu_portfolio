@@ -43,7 +43,7 @@ const ScreensSlider = ({screens}:{screens:ScreensSliderProps[]}) => {
       <div className="carousel keen-slider" ref={sliderRef}>
         {screens.map((screen, i) => (
           <div onClick={() => setOpenModal(screen.url)} key={i} className={`carousel__cell number-slide${i+1}`}>
-            <img src={screen.url} alt={screen.name}  className="w-full xs:min-w-[180px] "/>
+            <img src={screen.url} alt={screen.name}  className="w-full xs:min-w-[180px] aspect-[568/478]"/>
           </div>
         ))}
       </div>

@@ -30,11 +30,11 @@ const page = async ({params}:{params:Promise<{projectID:string}>}) => {
     <>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-28  mt-[156px] mb-10 border dark:border-gray-800 rounded-[32px] pt-[139px] pe-[111px] pb-[93px] ps-[84px] shadow-lg">
-          <div className="flex flex-col gap-10 items-center">
+          <div className="flex flex-col gap-10 items-center aspect-[568/478]">
             <Image
               src={imgThree}
               alt="product image"
-              className="w-full min-w-[220px] xs:min-w-[260px] max-w-[461px] max-h-[694px] shadow-2xl rounded-[32px] dark:shadow-white/30 "
+              className="w-full min-w-[220px] xs:min-w-[260px]  aspect-[568/478] shadow-2xl rounded-[32px] dark:shadow-white/30 "
             ></Image>
             <div className="mt-10 px-10 md:px-0 flex justify-center items-center">
               <ScreensSlider screens={images} />

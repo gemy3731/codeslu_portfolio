@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { IBlogData } from "../(pages)/blog/[blogID]/page";
-import { useState } from "react";
+import {  useState } from "react";
 import { useRouter } from "next/navigation";
 import Loader from "./Loader";
+
+
 
 const ForumCard = ({ image, blog }: { image: string, blog: IBlogData }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,10 +17,20 @@ const ForumCard = ({ image, blog }: { image: string, blog: IBlogData }) => {
     setIsLoading(true);
     router.push(`/blog/${blog?._id}`);
   };
+  const truncateText = (html: string) => {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+    const text = tempDiv.textContent || '';
+    return text;
+  };
+
+
 
   if (isLoading) {
     return <Loader />;
   }
+  
+  
 
   return (
     <a href={`/blog/${blog?._id}`} onClick={handleClick}>
@@ -36,7 +48,7 @@ const ForumCard = ({ image, blog }: { image: string, blog: IBlogData }) => {
             <p className=" text-[#8b96b3] dark:text-[#767b84] font-bold blogCard-title">
               {blog?.title}
             </p>
-            <p className="" dangerouslySetInnerHTML={{ __html: blog?.description }}/>
+            <p  className="text-[12px] md:text-[14px]" dangerouslySetInnerHTML={{ __html: truncateText(blog?.description || '') }}/>
             
           </div>
           <div className="flex flex-col gap-3 items-end justify-end uppercase md:col-span-3 ">

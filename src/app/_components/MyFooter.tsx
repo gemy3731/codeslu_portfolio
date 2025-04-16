@@ -2,7 +2,7 @@ import Image from "next/image";
 import imgOne from "../../../assets/logo.png";
 import { MdArrowOutward } from "react-icons/md";
 import FooterSlider from "./FooterSlider";
-import { bigShouldersInline } from "../Fonts";
+import { bigShouldersInline, orbitron } from "../Fonts";
 import TermsAndPolicy from "./TermsAndPolicy";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -35,7 +35,7 @@ const MyFooter =async () => {
               alt=""
               className="mr-3 w-[40px] md:w-[80px] h-[40px] md:h-[80px] rounded-full"
             ></Image>
-            <h3 className="text-[1rem] md:text-[1.8rem] font-semibold">CodeSlu</h3>
+            <h3 className={`text-[1rem] md:text-[1.8rem] font-semibold tracking-widest ${orbitron.className}`}>CodeSlu</h3>
           </div>
           <div className="cols-span-12 md:col-span-10 flex flex-col justify-center items-center">
             <h4 className="font-semibold text-[#515151] mb-3">

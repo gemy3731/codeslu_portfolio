@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import AboutCard from "./AboutCard";
-import imgThree from "../../../assets/1.jpg";
-import img1 from "../../../assets/2.jpg";
+// import imgThree from "../../../assets/1.jpg";
+// import img1 from "../../../assets/2.jpg";
 import Aos from "aos";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -10,7 +10,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 interface IAboutData {
   description: string;
   left_card_image: string;
-  right_card_image: string;
+  Right_card_image: string;
   left_card_lower_text: string;
   left_card_upper_text: string;
   right_card_lower_text: string;
@@ -44,6 +44,7 @@ const About = () => {
     try {
       const response = await fetch(`${apiUrl}/api/about`,{cache:'no-cache'});
       const data = await response.json();
+      console.log("aboutusss",data)
       setAboutData(data[0]);
     } catch (error) {
       console.error("Error in getData:", error);
@@ -80,22 +81,24 @@ const About = () => {
         <p data-aos="fade-left" className="ml-4 mt-4">
           {aboutData?.description}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-14">
-          <div className="px-10 md:p-0">
-            <AboutCard
-              image={img1}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-14 ">
+          <div className="px-10 md:p-0 ">
+            {aboutData&&<AboutCard
+              image={aboutData?.left_card_image}
               topText={aboutData?.left_card_upper_text ?? "Years Experience"}
               bottomText={aboutData?.left_card_lower_text ?? "8+"}
               anims={"zoom-in-down"}
-            />
+            />}
+            
           </div>
-          <div className="md:translate-y-24 translate-y-0 px-10 md:p-0">
-            <AboutCard
-              image={imgThree}
+          <div className="md:translate-y-24 translate-y-0 px-10 md:p-0 ">
+            {aboutData&&<AboutCard
+              image={aboutData?.Right_card_image}
               topText={aboutData?.right_card_upper_text ?? "Completed Projects"}
               bottomText={aboutData?.right_card_lower_text ?? "+1k"}
               anims={"zoom-in-down"}
-            />
+            />}
+            
           </div>
         </div>
       </div>

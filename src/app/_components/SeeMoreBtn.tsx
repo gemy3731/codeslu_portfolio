@@ -1,7 +1,7 @@
 import { Button } from 'flowbite-react'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import Loader from './Loader';
+import { ImSpinner9 } from 'react-icons/im';
 
 
 const SeeMoreBtn = ({path}:{path:string}) => {
@@ -10,13 +10,12 @@ const SeeMoreBtn = ({path}:{path:string}) => {
     const onSeeMore = () => {
         setIsLoading(true);
         router.push(`/${path}`);
+        setIsLoading(false)
       };
-      if (isLoading) {
-        return <Loader />;
-      }
+
   return (
     <Button onClick={onSeeMore} className="forumBtn px-4 py-1 rounded-3xl  mx-auto mb-20">
-           <span className="z-[1]"> See more...</span>
+           <span className="z-[1]">{isLoading?<ImSpinner9 className='animate-spin' />:"See more..."} </span>
             <div className="forumBtn-overlay"></div>
           </Button>
   )

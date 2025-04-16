@@ -58,7 +58,7 @@ const Forum = () => {
               key={index} 
               className={`layer ${index === images.length - 1 ? '!sticky' : 'sticky'} top-0`}
             >
-              <ForumCard image={images[index].url} blog={blog} />
+              <ForumCard  blog={blog} />
             </div>
           ))}
         </div>

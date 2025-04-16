@@ -2,19 +2,18 @@
 
 import Image from "next/image";
 import { IBlogData } from "../(pages)/blog/[blogID]/page";
-import {  useState } from "react";
 import { useRouter } from "next/navigation";
-import Loader from "./Loader";
 
 
 
-const ForumCard = ({ image, blog }: { image: string, blog: IBlogData }) => {
-  const [isLoading, setIsLoading] = useState(false);
+
+const ForumCard = ({  blog }: { blog: IBlogData }) => {
+
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+
     router.push(`/blog/${blog?._id}`);
   };
   const truncateText = (html: string) => {
@@ -26,10 +25,7 @@ const ForumCard = ({ image, blog }: { image: string, blog: IBlogData }) => {
 
 
 
-  if (isLoading) {
-    return <Loader />;
-  }
-  
+
   
 
   return (
@@ -37,7 +33,7 @@ const ForumCard = ({ image, blog }: { image: string, blog: IBlogData }) => {
       <div className="forumCard flex flex-col gap-6 w-full bg-gradient-to-b dark:from-[#1b1b1b] dark:via-black dark:to-[#1b1b1b] from-slate-100   via-white to-slate-100 p-4 my-4 rounded-3xl">
         <div className="w-full relative h-[50vh] sm:h-[70vh] rounded-t-3xl overflow-hidden">
           <Image
-            src={image}
+            src={blog.image}
             alt={blog?.name}
             fill={true}
             className="rounded-t-3xl"

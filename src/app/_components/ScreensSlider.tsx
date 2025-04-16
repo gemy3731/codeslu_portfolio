@@ -4,17 +4,18 @@ import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { useState } from "react"
 
-interface ScreensSliderProps {
-  url: string,
-  name: string
-}
+
 
 const carousel: KeenSliderPlugin = (slider) => {
     const z = 300
+
     function rotate() {
-      const deg = 360 * slider.track.details.progress
-      slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`
+      if (slider.track.details) {
+        const deg = 360 * slider.track.details.progress
+        slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`
+      }
     }
+
     slider.on("created", () => {
       const deg = 360 / slider.slides.length
       slider.slides.forEach((element, idx) => {
@@ -25,7 +26,7 @@ const carousel: KeenSliderPlugin = (slider) => {
     slider.on("detailsChanged", rotate)
   }
 
-const ScreensSlider = ({screens}:{screens:ScreensSliderProps[]}) => {
+const ScreensSlider = ({screens}:{screens:string[]}) => {
     const [openModal, setOpenModal] = useState<string|undefined>('');
     const [sliderRef] = useKeenSlider<HTMLDivElement>(
         {
@@ -42,8 +43,8 @@ const ScreensSlider = ({screens}:{screens:ScreensSliderProps[]}) => {
     <div className="scene ">
       <div className="carousel keen-slider" ref={sliderRef}>
         {screens.map((screen, i) => (
-          <div onClick={() => setOpenModal(screen.url)} key={i} className={`carousel__cell number-slide${i+1}`}>
-            <img src={screen.url} alt={screen.name}  className="w-full xs:min-w-[180px] aspect-[568/478]"/>
+          <div onClick={() => setOpenModal(screen)} key={i} className={`carousel__cell number-slide${i+1}`}>
+            <img src={screen} alt='Project screenshot'  className="w-full xs:min-w-[180px] aspect-[568/478]"/>
           </div>
         ))}
       </div>

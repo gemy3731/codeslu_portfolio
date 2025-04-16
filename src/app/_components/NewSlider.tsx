@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-const images = [
-  { url: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland" },
-  { url: "https://i.ibb.co/jrRb11q/img2.jpg", name: "Finland" },
-  { url: "https://i.ibb.co/NSwVv8D/img3.jpg", name: "Iceland" },
-  { url: "https://i.ibb.co/Bq4Q0M8/img4.jpg", name: "Australia" },
-  { url: "https://i.ibb.co/jTQfmTq/img5.jpg", name: "Netherland" },
-  { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
-];
+// const images = [
+//   { url: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland" },
+//   { url: "https://i.ibb.co/jrRb11q/img2.jpg", name: "Finland" },
+//   { url: "https://i.ibb.co/NSwVv8D/img3.jpg", name: "Iceland" },
+//   { url: "https://i.ibb.co/Bq4Q0M8/img4.jpg", name: "Australia" },
+//   { url: "https://i.ibb.co/jTQfmTq/img5.jpg", name: "Netherland" },
+//   { url: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland" },
+// ];
 
 interface ISliderData {
   _id: string;
@@ -63,12 +63,12 @@ export default function NewSlider() {
     <section id="home" className="container mx-auto">
       <div className="slider-container mx-auto rounded-xl">
         <div className="new-slide">
-          {sliderData.map((item,i) => (
+          {sliderData.map((item) => (
             <div
               key={item._id}
               className="item"
               style={{
-                backgroundImage: `url(${images[i].url})`,
+                backgroundImage: `url(${item.image})`,
               }}
             >
               <div className="slider-content">

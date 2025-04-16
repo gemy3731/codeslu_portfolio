@@ -1,5 +1,5 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import  { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -10,7 +10,7 @@ const AboutCard = ({
   anims,
 }: {
   className?: string;
-  image: StaticImageData;
+  image: string;
   topText: string;
   bottomText: string;
   anims: string;
@@ -28,7 +28,8 @@ const AboutCard = ({
       data-aos={anims}
       data-aos-anchor-placement="top-bottom"
     >
-      <Image src={image} alt="" className="rounded-3xl w-full" />
+      {image&& <Image src={image} alt="About Card Image" width={300} height={400} className="rounded-3xl !w-full !h-full object-cover aspect-[3/4]" />}
+     
       <div className="aboutCard-overlay text-white">
       <h4 className="absolute top-4 right-4  font-bold text-right card-text">
         <p>{cardText[0]}</p>

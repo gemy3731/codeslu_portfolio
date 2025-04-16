@@ -87,7 +87,7 @@ export default function MyNavbar() {
           <Navbar.Link href="/">Home</Navbar.Link>
           <Navbar.Link href="/">About</Navbar.Link>
           <Navbar.Link href="/">Portfolio</Navbar.Link>
-          <Navbar.Link href="/">Forum</Navbar.Link>
+          <Navbar.Link href="/">Success stories</Navbar.Link>
           <Navbar.Link href="/">Contact us</Navbar.Link>
           <ThemeToggleBtn isOpened={isOpened} />
         </Navbar.Collapse>

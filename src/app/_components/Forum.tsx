@@ -49,7 +49,7 @@ const Forum = () => {
 
   return (
     <section id="forum" className="container mx-auto px-10 xl:px-0 relative">
-      <AnimatedHeader animation="fade-down" header="Blog" classes="forum-header" />
+      <AnimatedHeader animation="fade-down" header="Success Stories" classes="forum-header" />
       <div ref={containerRef} className="mt-20 relative">
         {/* Cards container with z-index */}
         <div className="relative z-10">

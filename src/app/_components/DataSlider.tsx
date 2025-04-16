@@ -140,7 +140,7 @@ const DataSlider = () => {
               duration={1}
               className="count-up-text"
             />
-            <div>All Projects</div>
+            <div>Ongoing Projects</div>
           </div>
         </div>
       </div>

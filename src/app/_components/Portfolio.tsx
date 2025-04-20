@@ -50,7 +50,7 @@ const Portfolio = () => {
         </div>
       </div>
       {/* <div className="shine-line"></div> */}
-      <SeeMoreBtn path="allProjects" />
+      <SeeMoreBtn path="portfolio" />
 
     </section>}
     </>
